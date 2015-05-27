@@ -1,4 +1,4 @@
-## The Gregory and Hansen (1996) test for a single shift in the parameters of a cointegrating relationship.
+## The Gregory and Hansen (1996) test for cointegration in the presence of a single regime shift of unknown timing in the slope and/or the intercept.  
 
 library(EIAdata)
 library(tseries) 
@@ -28,7 +28,7 @@ adf.m2 <- 0
 for(i in 1:length(oil)){
     adf.m2[i] <- adf.test(lm(as.vector(gas)~ind[,i]+as.vector(oil))$resid)$statistic}
 
-stat <- min(adf.m2)
+testStat <- min(adf.m2)
 
 ## Now need to compare stat to the critical value ----
 
